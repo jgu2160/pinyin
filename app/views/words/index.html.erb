@@ -1,0 +1,13 @@
+<p><%= @sentence %></p>
+<p><%= @numeralized_sentence %></p>
+<div>
+  <table>
+    <% @phrase_array.each do |word| %>
+      <tr>
+        <td><%= word.simplified %></td>
+        <td><%= word.toned_pinyin %></td>
+        <td><%= word.definitions %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
