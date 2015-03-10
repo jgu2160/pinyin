@@ -1,13 +1,20 @@
 <p><%= @sentence %></p>
-<p><%= @numeralized_sentence %></p>
+<p><%= @simplified_array.join %></p>
 <div>
   <table>
-    <% @phrase_array.each do |word| %>
+    <tr>
+      <td>Simplified</td>
+      <td>Pinyin</td>
+      <td>Definition</td>
+    </tr>
+    <% @definition_array.each do |word| %>
       <tr>
         <td><%= word.simplified %></td>
         <td><%= word.toned_pinyin %></td>
-        <td><%= word.definitions %></td>
+        <td><i><%= word.definitions %></i></td>
       </tr>
     <% end %>
   </table>
 </div>
+<p><%= @numeralized_array %></p>
+<p><%= @def_tracking_array %></p>
