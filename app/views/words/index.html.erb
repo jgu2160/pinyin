@@ -7,7 +7,7 @@
       <td>Pinyin</td>
       <td>Definition</td>
     </tr>
-    <% @definition_array.each do |word| %>
+    <% @word_array.each do |word| %>
       <tr>
         <td><%= word.simplified %></td>
         <td><%= word.toned_pinyin %></td>
@@ -15,6 +15,7 @@
       </tr>
     <% end %>
   </table>
+  <p><%= @word_array[-1].to_json %></p>
 </div>
 <p><%= @numeralized_array %></p>
 <p><%= @def_tracking_array %></p>

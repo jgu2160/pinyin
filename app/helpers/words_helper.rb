@@ -4,7 +4,7 @@ module WordsHelper
       char_array = sentence.chars
       numeralized_array = []
       simplified_array = []
-      definition_array = []
+      word_array = []
       def_tracking_array = []
       dta_size = 0
       k = 0
@@ -31,7 +31,7 @@ module WordsHelper
           count = search_result.char_count
           numeralized_array << count
           simplified_array << search_result.simplified
-          definition_array << search_result
+          word_array << search_result
           def_tracking_array << Array.new(count, dta_size)
           dta_size += 1
           k += count
@@ -42,7 +42,7 @@ module WordsHelper
           numeralized_array[index] = (1..x).to_a.reverse
         end
       end.flatten
-      return numeralized_array, simplified_array, definition_array, def_tracking_array.flatten
+      return numeralized_array, simplified_array, word_array, def_tracking_array.flatten
     end
     def regex
       /\d|。|，|“|”/
