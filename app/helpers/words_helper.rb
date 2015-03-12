@@ -44,6 +44,7 @@ module WordsHelper
       end.flatten
       return numeralized_array, simplified_array, word_array, def_tracking_array.flatten
     end
+
     def regex
       /\d|。|，|“|”/
     end
