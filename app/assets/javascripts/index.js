@@ -89,6 +89,7 @@ $(document).ready(function (){
     $("#userText").keyup(colorSentence);
 
     var chinese = payload.chinese;
+    console.log(payload);
     var pinyin = payload.pinyin;
     var englishTrans = payload.englishTrans;
     var charsPerPhrase = payload.charsPerPhrase;
