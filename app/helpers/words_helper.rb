@@ -1,6 +1,6 @@
 module WordsHelper
   class << self
-    def numeralize_sentence(sentence)
+    def make_sentence(sentence)
       char_array = sentence.chars
       numeralized_array = []
       simplified_array = []
@@ -13,6 +13,7 @@ module WordsHelper
         if char_array[k][regex]
           numeralized_array << 1
           simplified_array << char_array[k]
+          pinyin_string << char_array[k] + " "
           def_tracking_array << nil
           k += 1
         else
@@ -45,11 +46,20 @@ module WordsHelper
         end
       end.flatten
       simplified_array = simplified_array.map { |word| word.split ("") }.flatten
-      return numeralized_array, simplified_array, word_array, pinyin_string.strip.split.push("。"), def_tracking_array.flatten
+      pinyin_array = pinyin_string.strip.split
+      pinyin_array = add_spaces(pinyin_array, numeralized_array)
+      return numeralized_array, simplified_array, word_array, pinyin_array, def_tracking_array.flatten
     end
 
     def regex
-      /\d|。|，|“|”/
+      /\d|。|，|“|”|「|」|、|：|（|）/
+    end
+
+    def add_spaces(pinyin_array, numeralized_array)
+      pinyin_array.each_with_index do |word, index|
+        pinyin_array[index] << " " if numeralized_array[index] == 1 && !word[regex]
+      end
+      pinyin_array
     end
   end
 end
