@@ -15,6 +15,7 @@ class SentencesController < ApplicationController
 
   def create
     session[:sentence] = sentence_params[:words]
+    require 'byebug'; byebug
     redirect_to sentences_path
   end
 

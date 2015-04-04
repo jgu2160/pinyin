@@ -23,7 +23,7 @@
         <div id="block-of-white"></div>
         <div id="cursor-sensor"></div>
         <div class="english" id="english-sentence"><p></p></div>
-        <%= form_for :sentence, url: sentences_path do |f| %>
+        <%= form_for :sentence, url: sentences_path, method: :post do |f| %>
           <%= f.text_field :words %>
           <%= f.submit "Submit Sentence" %>
         <% end %>

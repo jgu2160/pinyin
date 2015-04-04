@@ -228,3 +228,11 @@ label { display: inline-block; }
 #english-sentence{
   margin-top: -100px;
 }
+
+#chinese-def {
+  font-size: 50px;
+}
+
+#english-def, #pinyin-def {
+  font-size: 30px;
+}
