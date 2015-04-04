@@ -1,5 +1,5 @@
 $(document).ready(function (){
-  if(window.location.pathname === '/sentences') {
+  if(window.location.pathname === '/sentences' || '/') {
     $("body").addClass("noscroll");
     window.onscroll = function () {
       window.scrollTo(0,0);
