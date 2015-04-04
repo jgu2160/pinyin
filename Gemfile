@@ -11,9 +11,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'rails_12factor', group: :production
 # gem 'bcrypt', '~> 3.1.7'
 gem 'unicorn'
+gem 'terminal-notifier'
 
 group :development, :test do
   gem 'byebug'
+  gem 'capybara'
   gem 'pry'
   gem 'rspec-rails'
   gem 'web-console', '~> 2.0'
