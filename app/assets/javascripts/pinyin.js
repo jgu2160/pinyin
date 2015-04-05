@@ -5,6 +5,9 @@ $(document).ready(function (){
       window.scrollTo(0,0);
     };
 
+    //var instructions = 'Welcome to the <strong>Pinyin</strong><strong class="incorrect">Type</strong> prototype. To use this app, you must enable <a id="input-link" href="https://chinese.yabla.com/type-chinese-characters.php?" target="_blank">pinyin keyboard input</a> on your operating system and know the basics of its usage. After this, click on the Chinese characters and start typing. You can toggle the pinyin <strong class="correct">on</strong> and <strong class="incorrect">off</strong>, off if you really want a challenge! <strong class="incorrect">Use Firefox on OS X for best results.</strong>'
+    //bootbox.alert(instructions);
+
     $('body').css('overflow-x', 'hidden');
 
     function changeDefinition(index) {
@@ -102,7 +105,6 @@ $(document).ready(function (){
     var defTrackingArray = payload.defTrackingArray;
     var englishTrans = payload.englishTrans;
     var pending = 1;
-    var instructions = 'Welcome to the <strong>Pinyin</strong><strong class="incorrect">Type</strong> prototype. To use this app, you must enable <a id="input-link" href="https://chinese.yabla.com/type-chinese-characters.php?" target="_blank">pinyin keyboard input</a> on your operating system and know the basics of its usage. After this, click on the Chinese characters and start typing. You can toggle the pinyin <strong class="correct">on</strong> and <strong class="incorrect">off</strong>, off if you really want a challenge! <strong class="incorrect">Use Firefox on OS X for best results.</strong>'
     $('#userText').attr('maxLength', chinese.length);
 
     createDefaultSentences();
