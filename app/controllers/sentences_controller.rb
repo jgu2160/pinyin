@@ -12,8 +12,8 @@ class SentencesController < ApplicationController
                   defTrackingArray: def_tracking_array,
                   englishTrans: englishTrans }.to_json
     translator = BingTranslator.new(Figaro.env.bing_id, Figaro.env.bing_secret)
-    trans_chinese = simplified_array.join
-    @chinese = translator.translate(trans_chinese, :from => 'zh-CHS', :to => 'en')
+    @trans_chinese = simplified_array.join
+    @chinese = translator.translate(@trans_chinese, :from => 'zh-CHS', :to => 'en')
   end
 
   def create
