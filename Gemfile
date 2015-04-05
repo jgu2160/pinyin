@@ -12,6 +12,9 @@ gem 'rails_12factor', group: :production
 # gem 'bcrypt', '~> 3.1.7'
 gem 'unicorn'
 gem 'terminal-notifier'
+gem 'bootstrap-sass'
+gem 'bing_translator'
+gem 'figaro'
 
 group :development, :test do
   gem 'byebug'
@@ -22,5 +25,7 @@ group :development, :test do
   gem 'spring'
   gem 'awesome_print'
   gem 'irbtools'
+  gem 'selenium-webdriver'
+  gem 'better_errors'
 end
 
