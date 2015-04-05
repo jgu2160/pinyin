@@ -11,6 +11,10 @@
       <label for="toggle-button"><span style="color:white">l</span></label>
     </p>
   </div>
+  <a onclick="this.firstElementChild.play()" class="button">
+    <audio src="http://api.voicerss.org?src=<%= @trans_chinese %>&hl=zh-cn&f=48khz_16bit_stereo&key=<%= Figaro.env.voice_rss_key %>">
+    </audio>
+    &#9658;</a>
   <div class="col-md-8" id="word-container">
     <form>
       <div style="background-color:green" class="chinese" id="chinese-sentence"><p></p></div>
@@ -32,10 +36,6 @@
     <p id="pinyin-def"></p>
     <p id="english-def"></p>
   </div>
-  <a onclick="this.firstElementChild.play()" class="button">
-      <audio src="http://api.voicerss.org?src=<%= @trans_chinese %>&hl=zh-cn&key=<%= Figaro.env.voice_rss_key %>">
-    </audio>
-    &#9658;</a>
   <p>
     <%= @chinese %>
   </p>
