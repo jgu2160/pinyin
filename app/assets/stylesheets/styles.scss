@@ -1,0 +1,256 @@
+$green: #19A347;
+$red: #FF4747;
+$yellow: #FAD767;
+$black: #C1C1C1;
+
+input[type="text"] {
+    font-size:25px
+}
+
+.correct {
+  color: $green;
+}
+
+.incorrect {
+  color: $red;
+}
+
+.pending {
+  color: $yellow;
+  opacity: 0.75;
+}
+
+#input-link{
+  color: blue;
+}
+
+#title{
+  font-size: 30px;
+}
+
+.container-part {
+  background-color:red;
+}
+
+.btn-primary, .btn-success {
+  background-color: $green;
+  border-bottom-color: $green;
+  border-color: $green;
+  margin: 3px;
+}
+
+.btn-primary:focus, .btn-success:focus {
+  background-color: $green;
+  border-color: $green;
+}
+.btn-primary:hover, .btn-success:hover {
+  background-color: $green;
+  border-color: $green;
+}
+
+.btn-success {
+  padding: 2px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.close:hover {
+  color: $red;
+}
+
+.modal-dialog {
+  margin: 60px;
+}
+
+label {
+  font-weight: normal !important;
+}
+
+a:link {
+  color: black;
+  text-decoration: none;
+}
+
+a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+  color: $red;
+}
+
+/* selected link */
+a:active {
+  color: $red;
+}
+
+#word-container {
+  height: 110px;
+  text-align: left;
+  line-height: 0;
+  position: relative;
+  margin: 20px;
+  top: 50px;
+  bottom: 0;
+  left: 0px;
+  right: 0;
+  z-index: 3;
+}
+
+#toggle-button {
+  font-color: white;
+  font-size: 30px;
+}
+
+#toggle-button:empty {
+  opacity:0;
+  position: relative;
+}
+
+#toggle-button:empty ~ label {
+  position: relative;
+  line-height: 1.6em;
+  text-indent: 4em;
+  margin: 0.2em 0;
+  cursor: pointer;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#toggle-button:empty ~ label:before,
+#toggle-button:empty ~ label:after {
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  content: ' ';
+  width: 3.6em;
+  background-color: #19A347;
+  border-radius: 0.3em;
+  box-shadow: inset 0 0.2em 0 rgba(0,0,0,0.3);
+  -webkit-transition: all 100ms ease-in;
+  transition: all 100ms ease-in;
+}
+
+#toggle-button:empty ~ label:after {
+  width: 1.4em;
+  top: 0.1em;
+  bottom: 0.1em;
+  margin-left: 0.1em;
+  background-color: #fff;
+  border-radius: 0.15em;
+  box-shadow: inset 0 -0.2em 0 rgba(0,0,0,0.2);
+}
+
+#toggle-button:checked ~ label:before {
+  background-color: $red;
+}
+
+#toggle-button:checked ~ label:after {
+  margin-left: 2em;
+}
+
+#definition {
+  position:relative;
+  text-align: bottom;
+}
+
+p {
+  text-align:left;
+  display: table-row;
+}
+
+form  { width: 400px; display: table;}
+label { display: inline-block; }
+
+#cursor {
+  opacity: 0;
+}
+
+#userText {
+  color: $black;
+  display: inline-block;
+  position:relative;
+  width: 1000px;
+  top: -18px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: transparent;
+  border: none;
+  text-align: left;
+  font-size: 40px;
+  cursor:none;
+  z-index:-1;
+}
+
+#block-of-white{
+  position: relative;
+  top : -80px;
+  margin-left: -10px;
+  background: white;
+  width: 1100px;
+  height: 70px;
+  z-index:0;
+}
+
+.chinese{
+  color: #C1C1C1;
+  font-size: 40px;
+  font-family: "Microsoft YaHei",Gulim,"굴림",Helvetica,sans-serif;
+}
+
+#chinese-sentence {
+  position:relative;
+  z-index:4;
+}
+
+#pinyin-sentence {
+  color: $black;
+  position:relative;
+  top: 20px;
+  z-index:2;
+}
+
+#cursor-sensor{
+  background-color: transparent;
+  position: relative;
+  top : -150px;
+  margin-left: -10px;
+  width: 1000px;
+  height: 70px;
+  z-index:5;
+}
+
+#instructions{
+  position: absolute;
+  margin-top:15px;
+  bottom: 0;
+  margin-right: 5px;
+}
+
+.english{
+  font-family: arial, sans-serif;
+  font-size: 24px;
+}
+.smaller-english{
+  font-family: arial, sans-serif;
+  font-size: 16px;
+}
+#english-sentence{
+  margin-top: -100px;
+}
+
+#chinese-def {
+  font-size: 50px;
+}
+
+#english-def, #pinyin-def {
+  font-size: 30px;
+}
