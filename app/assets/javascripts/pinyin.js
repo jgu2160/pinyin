@@ -1,4 +1,5 @@
-$(document).ready(function (){
+$(document).ready(function () {
+  $('#loader').hide();
   if(window.location.pathname === '/sentences' || '/') {
     $("body").addClass("noscroll");
     window.onscroll = function () {
@@ -17,56 +18,58 @@ $(document).ready(function (){
       pinyinDef = pinyinJs.convert(word.pronunciation.replace("[","").replace("]",""));
       englishDef = word.definitions;
       $("#chinese-def").html(chineseDef);
-      $("#pinyin-def").html(pinyinDef);
       $("#english-def").html(englishDef);
+      $("#pinyin-def").html("<a id='spoken-whole' onclick=\'this.firstElementChild.play()\' class=\'button text-left\'>&#9658;</a>");
+      $("<span>" + pinyinDef + "</span>").appendTo("#pinyin-def");
+      $("<audio src=\'http://api.voicerss.org?src=" + chineseDef + "&r=-3&hl=zh-cn&f=48khz_16bit_stereo&key=" + voiceRSS + "\'></audio>").appendTo('#spoken-whole');
     }
 
-    function createDefaultSentences(){
+    function createDefaultSentences() {
       createChineseSentence();
       createPinyinSentence();
     }
 
-    function createChineseSentence(){
+    function createChineseSentence() {
       document.getElementById("chinese-sentence").innerHTML = null;
       for (var i = 0, len = chinese.length; i < len; i++) {
         $('<span>' + chinese[i] + '</span>').appendTo('#chinese-sentence');
       }
     }
 
-    function createPinyinSentence(){
+    function createPinyinSentence() {
       document.getElementById("pinyin-sentence").innerHTML = null;
       for (var i = 0, len = pinyin.length; i < len; i++) {
         $('<span>' + pinyin[i] + '</span>').appendTo('#pinyin-sentence');
       }
     }
 
-    function createInstructions(){
+    function createInstructions() {
       document.getElementById("instructions").innerHTML = instructions;
     }
 
-    function colorCharByClass(parent_id, position, correctness){
+    function colorCharByClass(parent_id, position, correctness) {
       $(parent_id + " span:nth-child(" + (position + 1) + ")" ).addClass(correctness);
     }
 
-    function colorCorrect(i){
+    function colorCorrect(i) {
       colorCharByClass("#chinese-sentence", i, "correct");
       colorCharByClass("#pinyin-sentence", i, "correct");
 
     }
-    function colorIncorrect(i){
+    function colorIncorrect(i) {
       colorCharByClass("#chinese-sentence", i, "incorrect");
       colorCharByClass("#pinyin-sentence", i, "incorrect");
     }
 
-    function colorPending(){
+    function colorPending() {
       changeDefinition(pending - 1);
-      for (var i = 1; i <= charsPerPhrase[pending - 1]; i++){
+      for (var i = 1; i <= charsPerPhrase[pending - 1]; i++) {
         colorCharByClass("#chinese-sentence", pending - 2 + i, "pending");
         colorCharByClass("#pinyin-sentence", pending - 2 + i, "pending");
       }
     }
 
-    function colorSentence(){
+    function colorSentence() {
       pending = 1;
       var user_input = document.getElementById("userText");
       user_chars = user_input.value;
@@ -82,13 +85,13 @@ $(document).ready(function (){
       }
     }
 
-    $(document).click(function(e){
-      if(e.target.id == "cursor-sensor"){
-        colorPending();
+    $(document).click(function(e) {
+      if(e.target.id == "cursor-sensor") {
         $("#userText").focus();
+        colorPending();
         console.log('focused');
       }
-      else{
+      else {
         colorSentence();
         console.log('not focused');
       }

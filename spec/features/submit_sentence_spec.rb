@@ -9,7 +9,7 @@ RSpec.describe "the user submission form", type: :feature, js: true do
     visit sentences_path
     chinese = "你好，欢迎。"
     fill_in "sentence_words", with: chinese
-    click_button "Submit Sentence"
+    click_button "Create New Sentence"
     expect(page).to have_content(chinese)
   end
 
