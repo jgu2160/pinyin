@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150311052231) do
+ActiveRecord::Schema.define(version: 20150415234326) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,5 +22,8 @@ ActiveRecord::Schema.define(version: 20150311052231) do
     t.text "pronunciation"
     t.text "definitions"
   end
+
+  add_index "words", ["simplified"], name: "index_words_on_simplified", using: :btree
+  add_index "words", ["traditional"], name: "index_words_on_traditional", using: :btree
 
 end
