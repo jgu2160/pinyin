@@ -1,4 +1,4 @@
-
+Reachable at www.pinyintype.com.
 This is the pre-alpha version of PinyinType, built on Rails, novel Javascript, and PostgreSQL. In its current state, the user can go from the root, which shows what type information is used by the app to create sentences, to the sentence page proper, where you can input your own sentence.
 
 Features that need implementing:
@@ -9,6 +9,7 @@ Features that need implementing:
 
 * Softer transitions between colors
 
-* pg_dump to put the dictionary on Heroku
+* More resilient sentence parsing
 
+* Performance improvements
 
