@@ -15,6 +15,7 @@ gem 'terminal-notifier'
 gem 'bootstrap-sass'
 gem 'bing_translator'
 gem 'figaro'
+gem "skylight"
 
 group :development, :test do
   gem 'byebug'
