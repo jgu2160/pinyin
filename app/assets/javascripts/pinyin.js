@@ -16,7 +16,7 @@ $(document).ready(function () {
       word = wordArray[word_index];
       chineseDef = word.simplified;
       pinyinDef = pinyinJs.convert(word.pronunciation.replace("[","").replace("]",""));
-      englishDef = word.definitions;
+      englishDef = pinyinJs.convert(word.definitions);
       $("#chinese-def").html(chineseDef);
       $("#english-def").html(englishDef);
       $("#pinyin-def").html("<a id='spoken-whole' onclick=\'this.firstElementChild.play()\' class=\'button text-left\'>&#9658;</a>");
