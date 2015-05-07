@@ -18,6 +18,7 @@ input[type="text"] {
 
 .correct {
   color: $green;
+  transition: 3s;
 }
 
 .incorrect {
