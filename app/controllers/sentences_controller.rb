@@ -1,6 +1,6 @@
 class SentencesController < ApplicationController
   def index
-    @default_sentence = '来得容易去得快。'
+    @default_sentence = '天才不过是勤奋而已。'
     sentence = session[:sentence] || @default_sentence
     numeralized_array, simplified_array, word_array, pinyin_array, def_tracking_array = WordsHelper.make_sentence(sentence)
     englishTrans = "Patience is a virtue."
