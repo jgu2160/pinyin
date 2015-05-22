@@ -10,7 +10,7 @@
       <span id="title"><strong>Pinyin<span class="incorrect">Type </span><span>  </span></strong></span>
       &nbsp;&nbsp;
       <input type="checkbox" onclick="handleClick(this);" id="toggle-button" name="toggle-button"/>
-      <label for="toggle-button"><span style="color:white">l</span></label>
+      <label for="toggle-button"><span class="white">l</span></label>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <a id="spoken-sentence" onclick="this.firstElementChild.play()" class="button">
         <audio src="http://api.voicerss.org?src=<%= @trans_chinese %>&r=-3&hl=zh-cn&f=48khz_16bit_stereo&key=<%= Figaro.env.voice_rss_key %>">

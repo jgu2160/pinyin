@@ -118,7 +118,3 @@ $(document).ready(function () {
 function handleClick(cb) {
   $("#pinyin-sentence").toggle("show",0);
 }
-
-$('a.button-toggle').click(function() {
-  $("#pinyin-sentence").toggle("show",0);
-});
