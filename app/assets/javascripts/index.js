@@ -89,17 +89,14 @@ $(document).ready(function () {
       if(e.target.id == "cursor-sensor") {
         $("#userText").focus();
         colorPending();
-        console.log('focused');
       }
       else {
         colorSentence();
-        console.log('not focused');
       }
     });
 
     $("#userText").keydown(colorPending);
     $("#userText").keyup(colorSentence);
-    console.log(payload);
 
     var charsPerPhrase = payload.charsPerPhrase;
     var chinese = payload.chinese;
