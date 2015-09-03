@@ -1,6 +1,7 @@
 module WordsHelper
   class << self
     def make_sentence(sentence)
+      sentence = sentence || '天才不过是勤奋而已。'
       char_array = sentence.chars
       numeralized_array = []
       simplified_array = []

@@ -24,7 +24,6 @@ group :development, :test do
   gem 'pry'
   gem 'rspec-rails'
   gem 'web-console', '~> 2.0'
-  gem 'spring'
   gem 'awesome_print'
   gem 'irbtools'
   gem 'selenium-webdriver'
