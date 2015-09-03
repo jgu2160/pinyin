@@ -103,7 +103,6 @@ $(document).ready(function () {
     var wordArray = payload.wordArray;
     var pinyin = payload.pinyin;
     var defTrackingArray = payload.defTrackingArray;
-    var englishTrans = payload.englishTrans;
     var pending = 1;
     $('#userText').attr('maxLength', chinese.length);
 

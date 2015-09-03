@@ -1,14 +1,13 @@
 class SentencesController < ApplicationController
   def index
-    sentence = session[:sentence]
+    @default_sentence = '天才不过是勤奋而已。'
+    sentence = session[:sentence] || @default_sentence
     numeralized_array, simplified_array, word_array, pinyin_array, def_tracking_array = WordsHelper.make_sentence(sentence)
-    englishTrans = "Patience is a virtue."
     @payload = {  charsPerPhrase: numeralized_array,
                   chinese: simplified_array,
                   wordArray: word_array,
                   pinyin: pinyin_array,
-                  defTrackingArray: def_tracking_array,
-                  englishTrans: englishTrans }.to_json
+                  defTrackingArray: def_tracking_array }.to_json
     translator = BingTranslator.new(Figaro.env.bing_id, Figaro.env.bing_secret)
     @trans_chinese = simplified_array.join
     @voiceRSS = Figaro.env.voice_rss_key
