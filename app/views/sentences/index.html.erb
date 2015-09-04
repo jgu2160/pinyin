@@ -33,7 +33,7 @@
     <%= form_for :sentence, url: sentences_path do |f| %>
       <%= f.text_field :words, class: "form-control" %>
       <%= f.submit "Create New Sentence", class: "btn btn-success" %>
-      <%= link_to "Default", sentences_path(sentence:  { words: @default_sentence }), id: "default", class: "btn btn-danger", method: :post %>
+      <%= link_to "Default", sentences_path(sentence: { words: @default_sentence }), id: "default", class: "btn btn-danger", method: :post %>
     <% end %>
   </div>
   <div id="definition-container" class="pull-right">
