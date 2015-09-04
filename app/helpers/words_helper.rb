@@ -52,7 +52,7 @@ module WordsHelper
     end
 
     def regex
-      /\d|。|，|“|”|「|」|、|：|（|）/
+      /\d|。|，|“|”|「|」|、|：|（|）|？/
     end
 
     def add_spaces(pinyin_array, numeralized_array)
